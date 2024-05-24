@@ -4,6 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -18,10 +19,8 @@ public class HomeStepsDefinition {
 
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        System.setProperty("webdriver.chrome.driver","/home/sebastianarbelaez/Descargas/copia latam/BookStore_Selenium/chromedriver");
-        driver = new ChromeDriver(options);
+       WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get("http://localhost:8081/");
     }
 
