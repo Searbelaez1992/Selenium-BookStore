@@ -56,25 +56,25 @@ Feature: HomePageFeature
     And  Cancel the created Booking of a product
     Then  I should see the new status of the Booking
 
-  #Booking Catalogue Scenarios
-  Scenario: Verify number of Booking in Booking Catalogue Page
+  #Booking Manager Scenarios
+  Scenario: Verify number of Booking in Booking Manager Page
     Given I navigate to the HomePage
     When  Navigate to Booking Manager Page
     Then I should see 4 Bookings to Edit
 
-  Scenario: Verify Aprovve booking in Booking Customer Page
+  Scenario: Verify Aprovve booking in Booking Manager Page
     Given I navigate to the HomePage
     When  Navigate to Booking Manager Page
-    And  Aprovve a Booking
+    And  Approve a Booking
     Then  I should see the approve Status of the booking
 
-  Scenario: Verify Reject booking in Booking Customer Page
+  Scenario: Verify Reject booking in Booking Manager Page
     Given I navigate to the HomePage
     When  Navigate to Booking Manager Page
     And  Reject a Booking
     Then  I should see the reject Status of the booking
 
-  Scenario: Verify Close booking in Booking Customer Page
+  Scenario: Verify Close booking in Booking Manager Page
     Given I navigate to the HomePage
     When  Navigate to Booking Manager Page
     And  Close a Booking
