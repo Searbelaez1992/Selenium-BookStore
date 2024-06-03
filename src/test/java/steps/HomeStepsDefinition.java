@@ -21,6 +21,7 @@ public class HomeStepsDefinition {
     public void iNavigateToTheHomePage() {
        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         driver.get("http://localhost:8081/");
     }
 
@@ -186,7 +187,7 @@ public class HomeStepsDefinition {
     }
     @And("Close a Booking")
     public void closeABooking() {
-        driver.findElement(By.xpath("//a[@href='/updateStatusBooking/1/5']")).click();
+        driver.findElement(By.xpath("//a[@href='/updateStatusBooking/1/3']")).click();
     }
 
     @Then("I should see the approve Status of the booking")
