@@ -20,8 +20,7 @@ public class HomeStepsDefinition {
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();//firefoxOptions);
-        driver.manage().window().maximize();
+        driver = new FirefoxDriver();
         driver.get("http://localhost:8081/");
     }
 
