@@ -27,7 +27,7 @@ public class HomeStepsDefinition {
         chromeOptions.addArguments("--disable-extensions"); // disabling extensions
         chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
         chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        chromeOptions.addArguments("--remote-debugging-port=0");
+        chromeOptions.addArguments("--remote-debugging-port=9230");
         driver = new ChromeDriver(chromeOptions);
         driver.get("http://localhost:8081/");
     }
