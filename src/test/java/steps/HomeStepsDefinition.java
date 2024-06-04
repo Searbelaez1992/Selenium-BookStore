@@ -12,8 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.firefox.FirefoxOptions;
+
 
 public class HomeStepsDefinition {
 
@@ -21,16 +20,15 @@ public class HomeStepsDefinition {
 
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
-       WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions firefoxOptions= new FirefoxOptions();
-        firefoxOptions.addArguments("--no-sandbox"); // Bypass OS security model*/
-        firefoxOptions.addArguments("start-maximized"); // open Browser in maximized mode
-        firefoxOptions.addArguments("disable-infobars"); // disabling infobars
-        firefoxOptions.addArguments("--disable-extensions"); // disabling extensions
-        firefoxOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
+        chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+        chromeOptions.addArguments("disable-infobars"); // disabling infobars
+        chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+        chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
+        chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         
-
-        driver = new FirefoxDriver(firefoxOptions);
+        driver = new ChromeDriver(chromeOptions);
         driver.get("http://localhost:8081/");
     }
 
