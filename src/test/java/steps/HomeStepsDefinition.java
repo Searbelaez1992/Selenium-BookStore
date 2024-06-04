@@ -20,8 +20,8 @@ public class HomeStepsDefinition {
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.add_argument("--no-sandbox")
-        chromeOptions.add_argument("--headless")
+        chromeOptions.add_argument("--no-sandbox");
+        chromeOptions.add_argument("--headless");
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get("http://localhost:8081/");
