@@ -19,8 +19,10 @@ public class HomeStepsDefinition {
 
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
-       WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
+       ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
+        driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get("http://localhost:8081/");
     }
