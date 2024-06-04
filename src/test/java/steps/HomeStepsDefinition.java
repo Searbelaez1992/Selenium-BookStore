@@ -21,7 +21,15 @@ public class HomeStepsDefinition {
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        FirefoxOptions firefoxOptions= new FirefoxOptions();
+        firefoxOptions.addArguments("--no-sandbox"); // Bypass OS security model*/
+        firefoxOptions.addArguments("start-maximized"); // open Browser in maximized mode
+        firefoxOptions.addArguments("disable-infobars"); // disabling infobars
+        firefoxOptions.addArguments("--disable-extensions"); // disabling extensions
+        firefoxOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        
+
+        driver = new FirefoxDriver(firefoxOptions);
         driver.get("http://localhost:8081/");
     }
 
