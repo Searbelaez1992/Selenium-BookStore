@@ -20,12 +20,8 @@ public class HomeStepsDefinition {
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
-        chromeOptions.addArguments("disable-infobars"); // disabling infobars
-        chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-        chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
-        chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
+        chromeOptions.add_argument("--headless")
+        chromeOptions.add_argument('--no-sandbox')
         driver = new ChromeDriver(chromeOptions);
         driver.manage().window().maximize();
         driver.get("http://localhost:8081/");
