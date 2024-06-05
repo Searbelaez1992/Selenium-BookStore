@@ -29,6 +29,7 @@ public class HomeStepsDefinition {
         chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
         chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         chromeOptions.addArguments("--remote-debugging-port=9230");
+        chromeOptions.binary_location = '/usr/bin/google-chrome'  
         System.setProperty("webdriver.chrome.driver","/home/sebastianarbelaez/Descargas/copia latam/BookStore_Selenium/chromedriver");
         driver = new ChromeDriver(chromeOptions);
         driver.get("http://localhost:8081/");
