@@ -21,7 +21,14 @@ public class HomeStepsDefinition {
     @Given("I navigate to the HomePage")
     public void iNavigateToTheHomePage() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
+        ooptions.addArguments("--remote-allow-origins=*");
+        chromeOptions.addArguments("--no-sandbox"); // Bypass OS security model
+        chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
+        chromeOptions.addArguments("disable-infobars"); // disabling infobars
+        chromeOptions.addArguments("--disable-extensions"); // disabling extensions
+        chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
+        chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        chromeOptions.addArguments("--remote-debugging-port=9230");
         System.setProperty("webdriver.chrome.driver","/home/sebastianarbelaez/Descargas/copia latam/BookStore_Selenium/chromedriver");
         driver = new ChromeDriver(options);
         driver.get("http://localhost:8081/");
