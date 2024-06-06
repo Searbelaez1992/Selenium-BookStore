@@ -25,9 +25,7 @@ public class HomeStepsDefinition {
         chromeOptions.addArguments("start-maximized"); // open Browser in maximized mode
         chromeOptions.addArguments("disable-infobars"); // disabling infobars
         chromeOptions.addArguments("--disable-extensions"); // disabling extensions
-        chromeOptions.addArguments("--disable-gpu"); // applicable to windows os only
         chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        //chromeOptions.addArguments("--remote-debugging-port=8081");
         driver = new ChromeDriver(chromeOptions);
         driver.get("http://localhost:8081/");
     }
