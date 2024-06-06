@@ -26,6 +26,7 @@ public class HomeStepsDefinition {
         chromeOptions.addArguments("disable-infobars"); // disabling infobars
         chromeOptions.addArguments("--disable-extensions"); // disabling extensions
         chromeOptions.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        chromeOptions.setBinary("/usr/bin/google-chrome");
         driver = new ChromeDriver(chromeOptions);
         driver.get("http://localhost:8081/");
     }
